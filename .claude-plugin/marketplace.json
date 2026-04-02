@@ -1,0 +1,14 @@
+{
+  "name": "thanksmors-skills",
+  "description": "A collection of Claude Code skills for enhancing your development workflow",
+  "owner": {
+    "name": "thanksmors"
+  },
+  "plugins": [
+    {
+      "name": "skills",
+      "description": "Claude Code skills including auto-sync for project documentation",
+      "source": "./plugins/skills"
+    }
+  ]
+}

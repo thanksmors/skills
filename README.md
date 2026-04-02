@@ -4,19 +4,27 @@ A collection of Claude Code skills for enhancing your development workflow.
 
 ## Installation
 
-### Add to Claude Code
+### Step 1: Add the marketplace
 
-Run the following slash command inside a Claude Code session:
-
-```
-/plugin install https://github.com/thanksmors/skills
+```bash
+claude plugin marketplace add thanksmors/skills
 ```
 
-Claude Code clones the repository, reads `.claude-plugin/plugin.json`, and discovers skills from the `skills/` directory automatically.
+### Step 2: Install the plugin
 
-### Verify Installation
+```bash
+claude plugin install skills@thanksmors-skills
+```
 
-Run `/plugin` to open the plugin manager and confirm `skills-marketplace` appears in the **Installed** tab.
+Or inside a Claude Code session:
+
+```
+/plugin install skills@thanksmors-skills
+```
+
+### Verify
+
+Run `/plugin` to open the plugin manager and confirm `skills` appears in the **Installed** tab.
 
 ## Available Skills
 
@@ -52,15 +60,17 @@ Creates and updates:
 
 ## Adding New Skills
 
-Add skills to the `skills/` directory:
+Add skills to the plugin's `skills/` directory inside `plugins/skills/`:
 
 ```
-skills/
+plugins/skills/skills/
 └── your-skill-name/
     ├── SKILL.md          # Required
     └── references/       # Optional
         └── *.md
 ```
+
+Then register the new skill in `plugins/skills/.claude-plugin/plugin.json`.
 
 ### Skill Structure
 
@@ -100,19 +110,20 @@ When user triggers via phrase or slash command...
 ```
 thanksmors/skills/
 ├── .claude-plugin/
-│   └── plugin.json          # Plugin manifest
-├── skills/                   # Auto-discovered skill directories
-│   ├── auto-sync/
-│   │   ├── SKILL.md         # Skill definition
-│   │   └── references/      # Supporting docs
-│   └── your-next-skill/
-├── docs/
-│   ├── specs/
-│   └── plans/
+│   ├── marketplace.json     # Marketplace catalog
+│   └── plugin.json          # Legacy (not used by marketplace)
+├── plugins/
+│   └── skills/              # The installable plugin
+│       ├── .claude-plugin/
+│       │   └── plugin.json  # Plugin manifest
+│       ├── skills/          # Auto-discovered skills
+│       │   └── auto-sync/
+│       │       ├── SKILL.md
+│       │       └── references/
+│       └── docs/
 ├── CHANGELOG.md
 ├── ROADMAP.md
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
 ## Quick Links
