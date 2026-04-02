@@ -1,20 +1,22 @@
-# Skills Marketplace
+# Skills
 
-A curated collection of Claude Code skills for enhancing your development workflow.
+A collection of Claude Code skills for enhancing your development workflow.
 
 ## Installation
 
 ### Add to Claude Code
 
-```bash
-/plugin https://github.com/thanksmors/skills
+Run the following slash command inside a Claude Code session:
+
+```
+/plugin install https://github.com/thanksmors/skills
 ```
 
-This installs the marketplace as a plugin in Claude Code. Skills are automatically discovered from this directory structure.
+Claude Code clones the repository, reads `.claude-plugin/plugin.json`, and discovers skills from the `skills/` directory automatically.
 
 ### Verify Installation
 
-Press `/` in Claude Code to see available slash commands. The marketplace skills will appear in the list.
+Run `/plugin` to open the plugin manager and confirm `skills-marketplace` appears in the **Installed** tab.
 
 ## Available Skills
 
@@ -93,20 +95,22 @@ When user triggers via phrase or slash command...
 - Helpful guidance
 ```
 
-## Directory Structure
+## Repository Structure
 
 ```
-skills/
+thanksmors/skills/
 ├── .claude-plugin/
-│   └── plugin.json
-├── skills/
+│   └── plugin.json          # Plugin manifest
+├── skills/                   # Auto-discovered skill directories
 │   ├── auto-sync/
-│   │   ├── SKILL.md
-│   │   └── references/
+│   │   ├── SKILL.md         # Skill definition
+│   │   └── references/      # Supporting docs
 │   └── your-next-skill/
 ├── docs/
 │   ├── specs/
 │   └── plans/
+├── CHANGELOG.md
+├── ROADMAP.md
 ├── README.md
 └── .gitignore
 ```
