@@ -7,11 +7,10 @@ A curated collection of Claude Code skills for enhancing your development workfl
 ### Add to Claude Code
 
 ```bash
-# Clone the marketplace to your Claude Code plugins directory
-git clone https://github.com/thanksmors/skills.git ~/.claude/skills-marketplace
+/plugin https://github.com/thanksmors/skills
 ```
 
-Skills are automatically discovered from this directory structure.
+This installs the marketplace as a plugin in Claude Code. Skills are automatically discovered from this directory structure.
 
 ### Verify Installation
 
