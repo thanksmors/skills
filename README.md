@@ -6,17 +6,11 @@ A collection of Claude Code skills for enhancing your development workflow.
 
 ### Step 1: Add the marketplace
 
-```bash
-claude plugin marketplace add thanksmors/skills
+```
+/plugin marketplace add thanksmors/skills
 ```
 
 ### Step 2: Install the plugin
-
-```bash
-claude plugin install skills@thanksmors-skills
-```
-
-Or inside a Claude Code session:
 
 ```
 /plugin install skills@thanksmors-skills
